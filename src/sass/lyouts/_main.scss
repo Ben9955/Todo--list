@@ -1,0 +1,183 @@
+.todo-app {
+  // min-height: 100vh;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 55rem;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 4rem;
+  }
+
+  &__form {
+    margin-bottom: 5rem;
+  }
+
+  &__deadline {
+    position: relative;
+    width: 100%;
+    background-color: $color-4;
+    max-height: 4rem;
+    display: flex;
+    align-items: center;
+
+    &__input {
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 1rem;
+      flex: 1;
+    }
+  }
+
+  &__importance {
+    @include setInputs;
+  }
+
+  &__input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $color-4;
+    max-height: 4rem;
+  }
+
+  &__input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem;
+  }
+
+  &__submit {
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    color: $color-1;
+    background-color: $color-4;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: $color-4;
+      background-color: $color-1;
+    }
+  }
+
+  &__list {
+    min-height: 55vh;
+    // height: 100%;
+  }
+
+  &__todos {
+    max-height: 50vh;
+    list-style: none;
+    overflow: scroll;
+    position: relative;
+  }
+}
+
+.todo {
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  border-left: 1rem solid $color-3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-1;
+  transition: all 0.6s ease;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__deadline {
+    z-index: 5;
+    position: absolute;
+    top: 0.5rem;
+    right: 50%;
+    transform: translateX(50%);
+
+    font-size: 1.2rem;
+    color: $color-3;
+  }
+
+  &--important {
+    border-left: 1rem solid $color-5;
+  }
+
+  &__btn {
+    padding: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: $color-4;
+    background-color: $color-1;
+    border: none;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $color-1;
+      background-color: $color-4;
+    }
+  }
+
+  &__description {
+    max-height: 2.5rem;
+    overflow-wrap: break-word;
+    flex: 1;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    &--active {
+      margin-top: 0.5rem;
+      max-height: 100%;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  &__filter,
+  &__footer--deleteall {
+    // margin-top: 3rem;
+
+    cursor: pointer;
+    // margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    background-color: $color-4;
+    padding: 1rem 1.5rem;
+    border-radius: 10rem;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 0.7rem 0.7rem rgba(0, 0, 0, 0.3);
+    &:hover {
+      background-color: $color-3;
+    }
+
+    &:active {
+      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0);
+    }
+  }
+
+  &--checked {
+    border-left: 1rem solid $color-6;
+  }
+
+  &--delete {
+    transform: rotateZ(-250deg) translateX(-10%) scale(0.4);
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}

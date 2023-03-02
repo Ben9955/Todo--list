@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <script
+      src="https://kit.fontawesome.com/fc5d0bceec.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer type="module" src="src/script/main.js"></script>
+    <title>Todo list</title>
+  </head>
+  <body>
+    <main class="todo-app">
+      <h1 class="todo-app__title">Todo List</h1>
+      <form class="todo-app__form">
+        <div class="todo-app__deadline">
+          <input
+            class="todo-app__deadline__input"
+            type="text"
+            placeholder="Deadline"
+          />
+
+          <div class="calender">
+            <div class="calender__header">
+              <i id="prev" class="fa-solid fa-chevron-left"></i>
+              <div class="calender__currentdate"></div>
+              <i id="next" class="fa-solid fa-chevron-right"></i>
+            </div>
+            <ul class="calender__weekdays">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+            <ul class="calender__days"></ul>
+          </div>
+        </div>
+        <select class="todo-app__importance" id="importance">
+          <option value="important">Important</option>
+          <option value="very important">Very Important</option>
+        </select>
+
+        <div class="todo-app__input-container">
+          <input
+            type="text"
+            class="todo-app__input"
+            placeholder="Insert your todo"
+          />
+          <button class="todo-app__submit">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="todo-app__list">
+        <ul class="todo-app__todos">
+          <!-- <li class="todo important">
+            <p class="todo__deadline">20-Oct-2023</p>
+            <p class="todo__description">nkjsdvnfdkvbflkjbfdkvbfd</p>
+            <button class="todo__btn todo__btn--check">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </button>
+            <button class="todo__btn todo__btn--delete">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li> -->
+        </ul>
+
+        <div class="todo__footer">
+          <select class="todo__filter">
+            <option value="all">All</option>
+            <option value="important">Important</option>
+            <option value="very important">Very important</option>
+            <option value="checked">Checked</option>
+          </select>
+
+          <button class="todo__footer--deleteall">Delete All</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal modal__hidden">
+      <h3>Do you want to delete all your todos??</h3>
+      <p>You can not restore your todos if you do!</p>
+
+      <button class="modal__btn modal__close">Cancel</button>
+
+      <button class="modal__btn modal__deleteAll">Delete All</button>
+    </div>
+    <div class="modal__overlay modal__overlay__hidden"></div>
+  </body>
+</html>

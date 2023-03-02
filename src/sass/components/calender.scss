@@ -1,0 +1,79 @@
+.calender {
+  display: none;
+  position: absolute;
+  background-color: $color-3;
+  padding: 2rem;
+  top: -5rem;
+  transform: translateY(-50rem);
+  transition: transform 0.8s ease;
+  z-index: 5;
+  &--active {
+    transform: translateY(0rem);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-1;
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: 2rem;
+
+    i {
+      cursor: pointer;
+      text-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+      &:active {
+        text-shadow: 0rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__weekdays li {
+    width: calc(100% / 7);
+  }
+
+  &__days li {
+    margin-top: 3rem;
+
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    &:not(.calender__day__prev, .calender__day__next) {
+      cursor: pointer;
+    }
+  }
+
+  &__days li:not(.calender__day__prev, .calender__day__next)::after {
+    position: absolute;
+    content: "";
+    height: 5rem;
+    width: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &__days li:hover::after {
+    background-color: $color-2;
+  }
+
+  &__day--active:after {
+    background-color: $color-2;
+  }
+}

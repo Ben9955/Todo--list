@@ -1,0 +1,11 @@
+@mixin setInputs {
+  padding: 1rem;
+  cursor: pointer;
+  //   font-size: 1.6rem;
+  margin: 1rem 0;
+  border: none;
+  outline: none;
+  background-color: $color-4;
+  //   appearance: none;
+  width: 100%;
+}
