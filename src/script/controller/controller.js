@@ -115,7 +115,7 @@ const controlDeleteAllTodos = function () {
   TodoData._addtodoLocalstorage();
 };
 
-export default init = function () {
+export default initial = function () {
   View._handelTodoBtn(controlTodoBtn);
   View._handelFilter(controlFilter);
   View._loadHandler(controlLoadHandler);
