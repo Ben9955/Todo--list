@@ -4,7 +4,9 @@
   "description": "",
   "default": "index.html",
   "alias": {
-    "global": false
+    "process": {
+      "global": "{}"
+    }
   },
   "scripts": {
     "start": "parcel index.html",
